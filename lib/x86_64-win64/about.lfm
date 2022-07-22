@@ -1,0 +1,32 @@
+object Form8: TForm8
+  Left = 374
+  Height = 240
+  Top = 142
+  Width = 320
+  Caption = 'О программе'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '1.0.10.0'
+  object Label1: TLabel
+    Left = 16
+    Height = 192
+    Top = 8
+    Width = 280
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Модуль "Приемная комиссия"'#13#10' разработан Финк Игорем Валерьевичом.'#13#10#13#10'По всем вопросам обращаться '#13#10'по телефону 89128459907'#13#10'ил по email: fink-ig@yandex.ru'#13#10#13#10'2013 г. Все права защищены.'
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object BitBtn1: TBitBtn
+    Left = 120
+    Height = 30
+    Top = 208
+    Width = 96
+    Caption = 'Закрыть'
+    Kind = bkClose
+    ModalResult = 11
+    TabOrder = 0
+  end
+end

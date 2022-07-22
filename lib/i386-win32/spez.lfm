@@ -1,0 +1,94 @@
+object Form2: TForm2
+  Left = 357
+  Height = 389
+  Top = 189
+  Width = 680
+  Caption = 'Специальности'
+  ClientHeight = 389
+  ClientWidth = 680
+  LCLVersion = '1.2.4.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 340
+    Top = 0
+    Width = 676
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Код'
+        Width = 75
+        FieldName = 'KOD'
+      end    
+      item
+        Title.Caption = 'Специальность'
+        Width = 250
+        FieldName = 'NAME'
+      end    
+      item
+        Title.Caption = 'Сокращение'
+        Width = 100
+        FieldName = 'SOKR'
+      end>
+    DataSource = Form1.Datasource2
+    PopupMenu = PopupMenu1
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object BitBtn1: TBitBtn
+    Left = 584
+    Height = 40
+    Top = 344
+    Width = 96
+    Caption = 'Закрыть'
+    Kind = bkClose
+    ModalResult = 11
+    TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 0
+    Height = 30
+    Top = 344
+    Width = 104
+    Caption = 'Добавить'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = BitBtn2Click
+    TabOrder = 2
+  end
+  object BitBtn3: TBitBtn
+    Left = 104
+    Height = 30
+    Top = 344
+    Width = 104
+    Caption = 'Изменить'
+    Kind = bkRetry
+    ModalResult = 4
+    OnClick = BitBtn3Click
+    TabOrder = 3
+  end
+  object BitBtn4: TBitBtn
+    Left = 208
+    Height = 30
+    Top = 344
+    Width = 104
+    Cancel = True
+    Caption = 'Удалить'
+    Kind = bkNo
+    ModalResult = 7
+    TabOrder = 4
+  end
+  object PopupMenu1: TPopupMenu
+    left = 364
+    top = 340
+    object MenuItem1: TMenuItem
+      Caption = 'Добавить'
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Изменить'
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Удалить'
+    end
+  end
+end

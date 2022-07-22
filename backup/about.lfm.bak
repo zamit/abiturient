@@ -1,0 +1,8 @@
+object Form8: TForm8
+  Left = 374
+  Height = 240
+  Top = 142
+  Width = 320
+  Caption = 'О программе'
+  LCLVersion = '1.0.10.0'
+end

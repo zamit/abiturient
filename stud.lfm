@@ -1,0 +1,65 @@
+object Form12: TForm12
+  Left = 386
+  Height = 352
+  Top = 211
+  Width = 803
+  Caption = 'Студенты'
+  ClientHeight = 352
+  ClientWidth = 803
+  LCLVersion = '1.0.10.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 264
+    Top = 0
+    Width = 792
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Фамилия'
+        Width = 200
+        FieldName = 'FAM'
+      end    
+      item
+        Title.Caption = 'Имя'
+        Width = 200
+        FieldName = 'IM'
+      end    
+      item
+        Title.Caption = 'Отчество'
+        Width = 200
+        FieldName = 'OTCH'
+      end    
+      item
+        Title.Caption = 'Группа'
+        FieldName = 'GRUPPA'
+      end>
+    DataSource = Datasource1
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 24
+    Height = 28
+    Top = 280
+    Width = 288
+    OnChange = Edit1Change
+    TabOrder = 1
+    Text = 'Поиск по ФИО'
+  end
+  object BitBtn1: TBitBtn
+    Left = 336
+    Height = 30
+    Top = 280
+    Width = 107
+    Cancel = True
+    Caption = 'Удалить'
+    Kind = bkNo
+    ModalResult = 7
+    OnClick = BitBtn1Click
+    TabOrder = 2
+  end
+  object Datasource1: TDatasource
+    DataSet = Form1.student
+    left = 18
+    top = 72
+  end
+end

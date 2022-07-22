@@ -1,0 +1,123 @@
+object Form11: TForm11
+  Left = 316
+  Height = 291
+  Top = 134
+  Width = 396
+  Caption = 'Информация о группе'
+  ClientHeight = 291
+  ClientWidth = 396
+  LCLVersion = '1.0.10.0'
+  object DBEdit1: TDBEdit
+    Left = 136
+    Height = 28
+    Top = 8
+    Width = 163
+    DataField = 'GRUPPA'
+    DataSource = Form1.grupp
+    CharCase = ecNormal
+    MaxLength = 14
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit
+    Left = 136
+    Height = 28
+    Top = 56
+    Width = 163
+    DataField = 'GOD_ZACHISL'
+    DataSource = Form1.grupp
+    CharCase = ecNormal
+    MaxLength = 14
+    TabOrder = 1
+  end
+  object DBEdit3: TDBEdit
+    Left = 136
+    Height = 28
+    Top = 104
+    Width = 163
+    DataField = 'KURS'
+    DataSource = Form1.grupp
+    CharCase = ecNormal
+    MaxLength = 14
+    TabOrder = 2
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 136
+    Height = 28
+    Top = 160
+    Width = 200
+    DataField = 'SPEZ'
+    DataSource = Form1.grupp
+    KeyField = 'KOD'
+    ListField = 'NAME'
+    ListFieldIndex = 0
+    ListSource = Form1.Datasource2
+    LookupCache = False
+    TabOrder = 3
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 21
+    Top = 8
+    Width = 108
+    Caption = 'Наименование'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 21
+    Top = 56
+    Width = 122
+    Caption = 'Год образования'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 21
+    Top = 104
+    Width = 33
+    Caption = 'Курс'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 21
+    Top = 160
+    Width = 108
+    Caption = 'Специальность'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 21
+    Top = 208
+    Width = 96
+    Caption = 'Руководитель'
+    ParentColor = False
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 136
+    Height = 28
+    Top = 208
+    Width = 200
+    DataField = 'KL_RUK'
+    DataSource = Form1.grupp
+    KeyField = 'TAB_NOM'
+    ListField = 'FAM'
+    ListFieldIndex = 0
+    ListSource = Form1.prepods
+    LookupCache = False
+    TabOrder = 4
+  end
+  object BitBtn1: TBitBtn
+    Left = 140
+    Height = 30
+    Top = 258
+    Width = 132
+    Caption = 'ОК'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = BitBtn1Click
+    TabOrder = 5
+  end
+end

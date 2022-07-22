@@ -1,0 +1,1063 @@
+object Form4: TForm4
+  Left = 325
+  Height = 584
+  Top = 80
+  Width = 841
+  BorderIcons = []
+  Caption = 'Анкета абитуриента'
+  ClientHeight = 584
+  ClientWidth = 841
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnKeyUp = FormKeyUp
+  LCLVersion = '1.4.0.4'
+  object DBEdit1: TDBEdit
+    Left = 288
+    Height = 23
+    Top = 64
+    Width = 264
+    DataField = 'FAM'
+    DataSource = Form1.Datasource1
+    CharCase = ecNormal
+    MaxLength = 120
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 288
+    Height = 23
+    Top = 96
+    Width = 264
+    DataField = 'IMYA'
+    DataSource = Form1.Datasource1
+    CharCase = ecNormal
+    MaxLength = 120
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 288
+    Height = 23
+    Top = 128
+    Width = 264
+    DataField = 'OTCH'
+    DataSource = Form1.Datasource1
+    CharCase = ecNormal
+    MaxLength = 120
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 200
+    Height = 17
+    Top = 64
+    Width = 53
+    Caption = 'Фамилия'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 200
+    Height = 17
+    Top = 128
+    Width = 55
+    Caption = 'Отчество'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 200
+    Height = 17
+    Top = 96
+    Width = 26
+    Caption = 'Имя'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit4: TDBEdit
+    Left = 112
+    Height = 23
+    Top = 200
+    Width = 120
+    DataField = 'DATA_R'
+    DataSource = Form1.Datasource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object Label4: TLabel
+    Left = 16
+    Height = 17
+    Top = 200
+    Width = 92
+    Caption = 'Дата рождения'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit5: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 8
+    Width = 80
+    DataField = 'NOM'
+    DataSource = Form1.Datasource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object Label5: TLabel
+    Left = 16
+    Height = 17
+    Top = 8
+    Width = 81
+    Caption = '№ заявления'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit6: TDBEdit
+    Left = 312
+    Height = 23
+    Top = 8
+    Width = 128
+    DataField = 'DATA'
+    DataSource = Form1.Datasource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object Label6: TLabel
+    Left = 208
+    Height = 17
+    Top = 8
+    Width = 94
+    Caption = 'Дата заявления'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit7: TDBEdit
+    Left = 368
+    Height = 23
+    Top = 200
+    Width = 272
+    DataField = 'MESTO_R'
+    DataSource = Form1.Datasource1
+    CharCase = ecNormal
+    MaxLength = 800
+    TabOrder = 6
+  end
+  object Label7: TLabel
+    Left = 256
+    Height = 17
+    Top = 200
+    Width = 102
+    Caption = 'Место рождения'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 664
+    Height = 17
+    Top = 200
+    Width = 24
+    Caption = 'Пол'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+  object PageControl1: TPageControl
+    Left = 9
+    Height = 280
+    Top = 248
+    Width = 832
+    ActivePage = TabSheet2
+    TabIndex = 1
+    TabOrder = 8
+    object TabSheet1: TTabSheet
+      Caption = 'Прием'
+      ClientHeight = 252
+      ClientWidth = 824
+      object Label9: TLabel
+        Left = 4
+        Height = 15
+        Top = 19
+        Width = 85
+        Caption = 'Специальность'
+        ParentColor = False
+      end
+      object DBComboBox1: TDBComboBox
+        Left = 540
+        Height = 23
+        Top = 19
+        Width = 256
+        DataField = 'FORMA_OBUCH'
+        DataSource = Form1.Datasource1
+        ItemHeight = 15
+        Items.Strings = (
+          'Очная'
+          'Заочная'
+        )
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label10: TLabel
+        Left = 412
+        Height = 15
+        Top = 19
+        Width = 94
+        Caption = 'Форма обучения'
+        ParentColor = False
+      end
+      object DBCheckBox1: TDBCheckBox
+        Left = 11
+        Height = 23
+        Top = 104
+        Width = 200
+        AllowGrayed = True
+        Caption = 'Требуется общежитие'
+        DataField = 'TREB_OBSH'
+        DataSource = Form1.Datasource1
+        TabOrder = 1
+        ValueChecked = '1'
+        ValueUnchecked = '0'
+      end
+      object Label11: TLabel
+        Left = 7
+        Height = 15
+        Top = 61
+        Width = 118
+        Caption = 'Базовое образование'
+        ParentColor = False
+        OnClick = Label11Click
+      end
+      object DBEdit27: TDBEdit
+        Left = 324
+        Height = 23
+        Top = 98
+        Width = 64
+        DataField = 'SR_BALL'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object GroupBox1: TGroupBox
+        Left = 11
+        Height = 73
+        Top = 155
+        Width = 801
+        Caption = 'Для заочного отделения'
+        ClientHeight = 53
+        ClientWidth = 797
+        TabOrder = 3
+        object Label12: TLabel
+          Left = 14
+          Height = 15
+          Top = 12
+          Width = 79
+          Caption = 'Место работы'
+          ParentColor = False
+          OnClick = Label11Click
+        end
+        object DBEdit10: TDBEdit
+          Left = 142
+          Height = 23
+          Top = 12
+          Width = 416
+          DataField = 'MESTO_RAB'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 160
+          TabOrder = 0
+        end
+        object Label13: TLabel
+          Left = 646
+          Height = 15
+          Top = 12
+          Width = 28
+          Caption = 'Стаж'
+          ParentColor = False
+          OnClick = Label11Click
+        end
+        object DBEdit11: TDBEdit
+          Left = 718
+          Height = 23
+          Top = 12
+          Width = 72
+          DataField = 'STAZH'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+      end
+      object Label29: TLabel
+        Left = 220
+        Height = 15
+        Top = 99
+        Width = 78
+        Caption = 'Средний балл'
+        ParentColor = False
+        OnClick = Label11Click
+      end
+      object DBEdit32: TDBEdit
+        Left = 620
+        Height = 23
+        Top = 99
+        Width = 176
+        DataField = 'TIP_OBR'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 80
+        TabOrder = 4
+      end
+      object Label34: TLabel
+        Left = 404
+        Height = 15
+        Top = 99
+        Width = 169
+        Caption = 'Заслуги (хорошист, отличник)'
+        ParentColor = False
+      end
+      object DBLookupComboBox1: TDBLookupComboBox
+        Left = 116
+        Height = 23
+        Top = 19
+        Width = 286
+        DataField = 'SPEZ'
+        DataSource = Form1.Datasource1
+        KeyField = 'KOD'
+        ListField = 'NAME'
+        ListFieldIndex = 0
+        ListSource = Form1.Datasource2
+        LookupCache = False
+        OnChange = DBLookupComboBox1Change
+        OnExit = DBLookupComboBox1Exit
+        TabOrder = 5
+      end
+      object DBComboBox3: TDBComboBox
+        Left = 179
+        Height = 23
+        Top = 59
+        Width = 272
+        DataField = 'BAZ_OBR'
+        DataSource = Form1.Datasource1
+        ItemHeight = 15
+        Items.Strings = (
+          'основное общее'
+          'полное среднее'
+          'прочее'
+        )
+        MaxLength = 0
+        TabOrder = 6
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Данные'
+      ClientHeight = 252
+      ClientWidth = 824
+      object DBEdit8: TDBEdit
+        Left = 124
+        Height = 23
+        Top = 14
+        Width = 280
+        DataField = 'GRAZHD'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 120
+        TabOrder = 0
+      end
+      object Label14: TLabel
+        Left = 12
+        Height = 15
+        Top = 14
+        Width = 71
+        Caption = 'Гражданство'
+        ParentColor = False
+      end
+      object DBEdit12: TDBEdit
+        Left = 592
+        Height = 23
+        Top = 14
+        Width = 221
+        DataField = 'VID_DOC'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 100
+        TabOrder = 1
+      end
+      object Label15: TLabel
+        Left = 488
+        Height = 15
+        Top = 14
+        Width = 81
+        Caption = 'Вид документа'
+        ParentColor = False
+      end
+      object DBEdit13: TDBEdit
+        Left = 124
+        Height = 23
+        Top = 67
+        Width = 112
+        DataField = 'SERIA_DOC'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 2
+      end
+      object DBEdit14: TDBEdit
+        Left = 268
+        Height = 23
+        Top = 67
+        Width = 128
+        DataField = 'NOMER_DOC'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 3
+      end
+      object Label16: TLabel
+        Left = 20
+        Height = 15
+        Top = 67
+        Width = 75
+        Caption = 'Серия/номер'
+        ParentColor = False
+      end
+      object DBEdit15: TDBEdit
+        Left = 524
+        Height = 23
+        Top = 67
+        Width = 289
+        DataField = 'KEM_VID'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 200
+        TabOrder = 4
+      end
+      object Label17: TLabel
+        Left = 420
+        Height = 15
+        Top = 67
+        Width = 59
+        Caption = 'Кем выдан'
+        ParentColor = False
+      end
+      object DBEdit16: TDBEdit
+        Left = 124
+        Height = 23
+        Top = 107
+        Width = 112
+        DataField = 'DATA_VID'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 5
+      end
+      object Label18: TLabel
+        Left = 20
+        Height = 15
+        Top = 107
+        Width = 69
+        Caption = 'Дата выдачи'
+        ParentColor = False
+      end
+      object Shape1: TShape
+        Left = -3
+        Height = 3
+        Top = 139
+        Width = 832
+      end
+      object DBEdit17: TDBEdit
+        Left = 236
+        Height = 23
+        Top = 155
+        Width = 112
+        DataField = 'SER_POL'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 6
+      end
+      object Label19: TLabel
+        Left = 20
+        Height = 15
+        Top = 155
+        Width = 160
+        Caption = 'Серия медицинского полиса'
+        DragKind = dkDock
+        ParentColor = False
+        WordWrap = True
+      end
+      object DBEdit18: TDBEdit
+        Left = 580
+        Height = 23
+        Top = 155
+        Width = 184
+        DataField = 'NOM_POL'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 7
+      end
+      object Label20: TLabel
+        Left = 356
+        Height = 15
+        Top = 155
+        Width = 164
+        Caption = 'Номер медицинского полиса'
+        DragKind = dkDock
+        ParentColor = False
+        WordWrap = True
+      end
+      object DBEdit37: TDBEdit
+        Left = 408
+        Height = 23
+        Top = 107
+        Width = 144
+        DataField = 'PODRAZD_PAS'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 8
+      end
+      object Label39: TLabel
+        Left = 296
+        Height = 15
+        Top = 107
+        Width = 85
+        Caption = 'Подразделение'
+        ParentColor = False
+      end
+      object DBEdit19: TDBEdit
+        Left = 236
+        Height = 23
+        Top = 208
+        Width = 160
+        DataField = 'POLIS_VIDAN'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 9
+        OnChange = DBEdit19Change
+      end
+      object Label44: TLabel
+        Left = 32
+        Height = 15
+        Top = 208
+        Width = 114
+        Caption = 'Страховая компания'
+        DragKind = dkDock
+        ParentColor = False
+        WordWrap = True
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Адреса, телефоны'
+      ClientHeight = 247
+      ClientWidth = 824
+      object Label21: TLabel
+        Left = 16
+        Height = 20
+        Top = 16
+        Width = 50
+        Caption = 'Индекс'
+        ParentColor = False
+      end
+      object DBEdit20: TDBEdit
+        Left = 144
+        Height = 28
+        Top = 16
+        Width = 216
+        DataField = 'INDEKS'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 60
+        TabOrder = 0
+      end
+      object Label22: TLabel
+        Left = 16
+        Height = 20
+        Top = 48
+        Width = 49
+        Caption = 'Страна'
+        ParentColor = False
+      end
+      object DBEdit21: TDBEdit
+        Left = 144
+        Height = 28
+        Top = 48
+        Width = 216
+        DataField = 'ADRES_PROPIS'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 320
+        TabOrder = 1
+      end
+      object Label23: TLabel
+        Left = 16
+        Height = 20
+        Top = 80
+        Width = 57
+        Caption = 'Область'
+        ParentColor = False
+      end
+      object Label40: TLabel
+        Left = 16
+        Height = 20
+        Top = 112
+        Width = 128
+        Caption = 'населенный пункт'
+        ParentColor = False
+      end
+      object Label41: TLabel
+        Left = 16
+        Height = 20
+        Top = 152
+        Width = 43
+        Caption = 'Улица'
+        ParentColor = False
+      end
+      object Label42: TLabel
+        Left = 16
+        Height = 20
+        Top = 184
+        Width = 34
+        Caption = 'Дом '
+        ParentColor = False
+      end
+      object Label43: TLabel
+        Left = 16
+        Height = 20
+        Top = 216
+        Width = 66
+        Caption = 'Квартира'
+        ParentColor = False
+      end
+      object DBEdit38: TDBEdit
+        Left = 144
+        Height = 28
+        Top = 80
+        Width = 216
+        DataField = 'OBLAST'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 200
+        TabOrder = 2
+      end
+      object DBEdit39: TDBEdit
+        Left = 144
+        Height = 28
+        Top = 112
+        Width = 216
+        DataField = 'GOROD'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 200
+        TabOrder = 3
+      end
+      object DBEdit40: TDBEdit
+        Left = 144
+        Height = 28
+        Top = 144
+        Width = 216
+        DataField = 'ULICA'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 240
+        TabOrder = 4
+      end
+      object DBEdit41: TDBEdit
+        Left = 144
+        Height = 28
+        Top = 176
+        Width = 216
+        DataField = 'DOM'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 80
+        TabOrder = 5
+      end
+      object DBEdit42: TDBEdit
+        Left = 144
+        Height = 28
+        Top = 208
+        Width = 216
+        DataField = 'KVARTIRA'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 80
+        TabOrder = 6
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Образование'
+      ClientHeight = 247
+      ClientWidth = 824
+      object DBEdit22: TDBEdit
+        Left = 211
+        Height = 28
+        Top = 27
+        Width = 608
+        DataField = 'VID_OBRAZ'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 600
+        TabOrder = 0
+        OnChange = DBEdit22Change
+      end
+      object Label24: TLabel
+        Left = 12
+        Height = 20
+        Top = 27
+        Width = 192
+        Caption = 'Полученнное образование'
+        ParentColor = False
+      end
+      object DBEdit23: TDBEdit
+        Left = 331
+        Height = 28
+        Top = 67
+        Width = 160
+        DataField = 'DATA_OKONCH'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 48
+        TabOrder = 1
+      end
+      object Label25: TLabel
+        Left = 12
+        Height = 20
+        Top = 67
+        Width = 304
+        Caption = 'Дата окончания полученного образования'
+        ParentColor = False
+      end
+      object DBEdit24: TDBEdit
+        Left = 251
+        Height = 28
+        Top = 99
+        Width = 120
+        DataField = 'VID_DOC_OBR'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 60
+        TabOrder = 2
+      end
+      object Label26: TLabel
+        Left = 19
+        Height = 20
+        Top = 99
+        Width = 222
+        Caption = 'Вид документа об образования'
+        ParentColor = False
+      end
+      object DBEdit25: TDBEdit
+        Left = 475
+        Height = 28
+        Top = 99
+        Width = 120
+        DataField = 'SER_VID_OBR'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 3
+      end
+      object Label27: TLabel
+        Left = 419
+        Height = 20
+        Top = 99
+        Width = 43
+        Caption = 'Серия'
+        ParentColor = False
+      end
+      object Label28: TLabel
+        Left = 611
+        Height = 20
+        Top = 99
+        Width = 17
+        Caption = '№'
+        ParentColor = False
+      end
+      object DBEdit26: TDBEdit
+        Left = 643
+        Height = 28
+        Top = 99
+        Width = 120
+        DataField = 'NOM_VID_OBR'
+        DataSource = Form1.Datasource1
+        CharCase = ecNormal
+        MaxLength = 40
+        TabOrder = 4
+      end
+      object Shape2: TShape
+        Left = 0
+        Height = 3
+        Top = 139
+        Width = 832
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Документы'
+      ClientHeight = 247
+      ClientWidth = 824
+      object DBGrid2: TDBGrid
+        Left = 11
+        Height = 208
+        Top = 11
+        Width = 784
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Тип документа'
+            FieldName = 'TIP'
+          end        
+          item
+            Title.Caption = 'Вид\'
+            FieldName = 'VID'
+          end        
+          item
+            Title.Caption = 'Количество'
+            FieldName = 'KOLVO'
+          end>
+        TabOrder = 0
+      end
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'ГИА'
+      ClientHeight = 247
+      ClientWidth = 824
+      object GroupBox2: TGroupBox
+        Left = 11
+        Height = 176
+        Top = 19
+        Width = 249
+        Caption = 'Математика'
+        ClientHeight = 156
+        ClientWidth = 245
+        TabOrder = 0
+        object DBEdit28: TDBEdit
+          Left = 118
+          Height = 28
+          Top = 20
+          Width = 120
+          DataField = 'GIAMAT_BALL'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label30: TLabel
+          Left = 30
+          Height = 20
+          Top = 20
+          Width = 44
+          Caption = 'Баллы'
+          ParentColor = False
+        end
+        object Label31: TLabel
+          Left = 30
+          Height = 20
+          Top = 92
+          Width = 52
+          Caption = 'Оценка'
+          ParentColor = False
+        end
+        object DBEdit29: TDBEdit
+          Left = 118
+          Height = 28
+          Top = 92
+          Width = 120
+          DataField = 'GIAMATOCENKA'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 268
+        Height = 176
+        Top = 19
+        Width = 281
+        Caption = 'Русский язык'
+        ClientHeight = 156
+        ClientWidth = 277
+        TabOrder = 1
+        object DBEdit30: TDBEdit
+          Left = 118
+          Height = 28
+          Top = 20
+          Width = 120
+          DataField = 'GIARUS_BALL'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object DBEdit31: TDBEdit
+          Left = 118
+          Height = 28
+          Top = 92
+          Width = 120
+          DataField = 'GIARUSOCENKA'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label32: TLabel
+          Left = 30
+          Height = 20
+          Top = 20
+          Width = 44
+          Caption = 'Баллы'
+          ParentColor = False
+        end
+        object Label33: TLabel
+          Left = 30
+          Height = 20
+          Top = 92
+          Width = 52
+          Caption = 'Оценка'
+          ParentColor = False
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 548
+        Height = 176
+        Top = 19
+        Width = 249
+        Caption = 'Математика'
+        ClientHeight = 156
+        ClientWidth = 245
+        TabOrder = 2
+        object DBEdit33: TDBEdit
+          Left = 166
+          Height = 28
+          Top = 12
+          Width = 72
+          DataField = 'GIAALG_BALL'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label35: TLabel
+          Left = 14
+          Height = 20
+          Top = 12
+          Width = 106
+          Caption = 'Алгебра баллы'
+          ParentColor = False
+        end
+        object Label36: TLabel
+          Left = 14
+          Height = 20
+          Top = 44
+          Width = 112
+          Caption = 'Алгебра оценка'
+          ParentColor = False
+        end
+        object DBEdit34: TDBEdit
+          Left = 166
+          Height = 28
+          Top = 44
+          Width = 72
+          DataField = 'GIAALGOCENKA'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object DBEdit35: TDBEdit
+          Left = 166
+          Height = 28
+          Top = 84
+          Width = 72
+          DataField = 'GIAGEOM_BALL'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object DBEdit36: TDBEdit
+          Left = 166
+          Height = 28
+          Top = 116
+          Width = 72
+          DataField = 'GIAGEOMOCENKA'
+          DataSource = Form1.Datasource1
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label37: TLabel
+          Left = 14
+          Height = 20
+          Top = 84
+          Width = 123
+          Caption = 'Геометрия баллы'
+          ParentColor = False
+        end
+        object Label38: TLabel
+          Left = 14
+          Height = 20
+          Top = 116
+          Width = 129
+          Caption = 'Геометрия оценка'
+          ParentColor = False
+        end
+      end
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 600
+    Height = 37
+    Top = 536
+    Width = 128
+    Caption = 'Сохранить'
+    Kind = bkAll
+    ModalResult = 8
+    OnClick = BitBtn1Click
+    TabOrder = 9
+  end
+  object BitBtn2: TBitBtn
+    Left = 728
+    Height = 37
+    Top = 536
+    Width = 104
+    Cancel = True
+    Caption = 'Отменить'
+    Kind = bkNo
+    ModalResult = 7
+    OnClick = BitBtn2Click
+    TabOrder = 10
+  end
+  object DBImage1: TDBImage
+    Left = 19
+    Height = 120
+    Top = 48
+    Width = 165
+  end
+  object DBComboBox2: TDBComboBox
+    Left = 704
+    Height = 23
+    Top = 200
+    Width = 124
+    DataField = 'POL'
+    DataSource = Form1.Datasource1
+    ItemHeight = 15
+    Items.Strings = (
+      'Мужской'
+      'Женский'
+    )
+    MaxLength = 0
+    TabOrder = 7
+  end
+end

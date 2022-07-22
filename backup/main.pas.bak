@@ -1,0 +1,404 @@
+unit main;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
+  DbCtrls, StdCtrls, Menus, ButtonPanel, ActnList, ComCtrls, Buttons, ExtCtrls,
+  ZConnection, ZDataset, ZSequence, db, sqldb, Grids, IniPropStorage;
+
+type
+
+  { TForm1 }
+
+  TForm1 = class(TForm)
+    abiturADRES_PROPIS: TStringField;
+    abiturADRES_PROZHIV: TStringField;
+    abiturBAZ_OBR: TStringField;
+    abiturDATA: TDateField;
+    abiturDATA_OKONCH: TStringField;
+    abiturDATA_R: TDateField;
+    abiturDATA_VID: TDateField;
+    abiturDOM: TStringField;
+    abiturDOP_POLIS: TStringField;
+    abiturFAM: TStringField;
+    abiturFORMA_OBUCH: TStringField;
+    abiturFOTO: TBlobField;
+    abiturGIAALGOCENKA: TLongintField;
+    abiturGIAALG_BALL: TLongintField;
+    abiturGIAGEOMOCENKA: TSmallintField;
+    abiturGIAGEOM_BALL: TLongintField;
+    abiturGIAMATOCENKA: TLongintField;
+    abiturGIAMAT_BALL: TLongintField;
+    abiturGIARUSOCENKA: TLongintField;
+    abiturGIARUS_BALL: TLongintField;
+    abiturGOROD: TStringField;
+    abiturGRAZHD: TStringField;
+    abiturIMYA: TStringField;
+    abiturINDEKS: TStringField;
+    abiturKEM_VID: TStringField;
+    abiturKVARTIRA: TStringField;
+    abiturLGOTA: TStringField;
+    abiturMESTO_R: TStringField;
+    abiturMESTO_RAB: TStringField;
+    abiturNAIM_ZAV: TStringField;
+    abiturNOM: TLongintField;
+    abiturNOMER_DOC: TStringField;
+    abiturNOM_POL: TStringField;
+    abiturNOM_VID_OBR: TStringField;
+    abiturOBLAST: TStringField;
+    abiturOTCH: TStringField;
+    abiturPODRAZD_PAS: TStringField;
+    abiturPOL: TStringField;
+    abiturPOLIS_VIDAN: TStringField;
+    abiturPRINYAT: TSmallintField;
+    abiturSERIA_DOC: TStringField;
+    abiturSER_POL: TStringField;
+    abiturSER_VID_OBR: TStringField;
+    abiturSPEZ: TStringField;
+    abiturSPEZ_NAME: TStringField;
+    abiturSR_BALL: TFloatField;
+    abiturSTAZH: TFloatField;
+    abiturSTRANA: TStringField;
+    abiturTELEFON: TStringField;
+    abiturTIP: TStringField;
+    abiturTIP_OBR: TStringField;
+    abiturTREB_OBSH: TSmallintField;
+    abiturULICA: TStringField;
+    abiturVID_DOC: TStringField;
+    abiturVID_DOC_OBR: TStringField;
+    abiturVID_OBRAZ: TStringField;
+    abiturYAZIK: TStringField;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
+    BitBtn7: TBitBtn;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    ComboBox1: TComboBox;
+    Datasource1: TDatasource;
+    Datasource2: TDatasource;
+    Datasource3: TDatasource;
+    Datasource4: TDatasource;
+    Edit2: TEdit;
+    MenuItem11: TMenuItem;
+    prepods: TDatasource;
+    grupp: TDatasource;
+    IniPropStorage: TIniPropStorage;
+    MenuItem10: TMenuItem;
+    MenuItem9: TMenuItem;
+    RadioGroup1: TRadioGroup;
+    spisok: TDatasource;
+    DBGrid1: TDBGrid;
+    Edit1: TEdit;
+    MainMenu1: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    PopupMenu1: TPopupMenu;
+    spisok1: TDatasource;
+    spisok2: TDatasource;
+    studentDATA: TDateField;
+    studentDATA_OTCH: TDateField;
+    studentDATA_R: TDateField;
+    studentDOM: TStringField;
+    studentFAM: TStringField;
+    studentFATHER: TStringField;
+    studentFATHER_RAB: TStringField;
+    studentFORMA_OBUCH: TStringField;
+    studentGOROD: TStringField;
+    studentGRUPPA: TStringField;
+    studentHOME_PHONE: TFloatField;
+    studentIM: TStringField;
+    studentINDEKC: TLongintField;
+    studentKEM_VIDAN: TStringField;
+    studentKORP: TStringField;
+    studentKVARTIRA: TStringField;
+    studentLGOTA: TStringField;
+    studentMOTHER: TStringField;
+    studentMOTHER_RAB: TStringField;
+    studentNOMER: TStringField;
+    studentNOM_ZACH: TLongintField;
+    studentOBLAST: TStringField;
+    studentOTCH: TStringField;
+    studentOTDELENIE: TStringField;
+    studentPHONE: TFloatField;
+    studentPODRAZD: TStringField;
+    studentPOL: TStringField;
+    studentPRIKAZ_OTCH: TStringField;
+    studentSCHOOL: TStringField;
+    studentSERIA: TStringField;
+    studentSPEZ: TStringField;
+    studentSR_BALL: TFloatField;
+    studentSTATUS: TStringField;
+    studentSTRANA: TStringField;
+    studentTIP_OTCH: TLongintField;
+    studentULICA: TStringField;
+    vedom1: TZQuery;
+    ZConnection1: TZConnection;
+    abitur: TZTable;
+    spez: TZTable;
+    plan_priema: TZTable;
+    ZQuery1: TZQuery;
+    vedom: TZQuery;
+    ZQuery2: TZQuery;
+    ZQuery3: TZQuery;
+    postupl: TZQuery;
+    ZSequence1: TZSequence;
+    student: TZTable;
+    gruppa: TZTable;
+    prepod: TZTable;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure Edit1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure MenuItem10Click(Sender: TObject);
+    procedure MenuItem11Click(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem8Click(Sender: TObject);
+    procedure MenuItem9Click(Sender: TObject);
+    procedure RadioGroup1Click(Sender: TObject);
+    procedure spezEditError(DataSet: TDataSet; E: EDatabaseError;
+      var DataAction: TDataAction);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+      uses spez,plan,anketa,spiski,svod,about,zachisl,gruppi,stud,post,post_spez;
+{$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.MenuItem4Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TForm1.MenuItem8Click(Sender: TObject);
+begin
+  zquery1.Active:=false;
+  zquery1.Active:=true;
+    zquery2.Active:=false;
+  zquery2.Active:=true;
+    zquery3.Active:=false;
+  zquery3.Active:=true;
+form6.show;
+end;
+
+procedure TForm1.MenuItem9Click(Sender: TObject);
+begin
+  form8.showmodal;
+end;
+
+procedure TForm1.RadioGroup1Click(Sender: TObject);
+begin
+  case RadioGroup1.ItemIndex of
+  0: abitur.IndexFieldNames:='nom';
+   1: abitur.IndexFieldNames:='spez';
+  end;
+end;
+
+procedure TForm1.spezEditError(DataSet: TDataSet; E: EDatabaseError;
+  var DataAction: TDataAction);
+begin
+
+end;
+
+procedure TForm1.MenuItem1Click(Sender: TObject);
+begin
+   form2.show;
+end;
+
+procedure TForm1.BitBtn2Click(Sender: TObject);
+begin
+  abitur.Append;
+  abitur.FieldByName('data').AsDateTime:=NOW();
+  form4.show;
+end;
+
+procedure TForm1.BitBtn1Click(Sender: TObject);
+begin
+  form7.show;
+end;
+
+procedure TForm1.BitBtn3Click(Sender: TObject);
+begin
+  abitur.Edit;
+  form4.show;
+end;
+
+procedure TForm1.BitBtn4Click(Sender: TObject);
+begin
+  abitur.Delete;
+  abitur.ApplyUpdates;
+end;
+
+procedure TForm1.BitBtn5Click(Sender: TObject);
+begin
+  abitur.Edit;
+  abitur.FieldByName('prinyat').AsInteger:=1;
+  abitur.post;
+  student.Append;
+  student.FieldByName('fam').AsString:=abitur.FieldByName('fam').AsString;
+  student.FieldByName('im').AsString:=abitur.FieldByName('imya').AsString;
+  student.FieldByName('otch').AsString:=abitur.FieldByName('otch').AsString;
+  student.FieldByName('pol').AsString:=abitur.FieldByName('pol').AsString;
+  student.FieldByName('school').AsString:=abitur.FieldByName('vid_obraz').AsString;
+  student.FieldByName('spez').AsString:=abitur.FieldByName('spez').AsString;
+ student.FieldByName('forma_obuch').AsString:=abitur.FieldByName('forma_obuch').AsString;
+  student.FieldByName('data_r').AsString:=abitur.FieldByName('data_r').AsString;
+  student.FieldByName('seria').AsString:=abitur.FieldByName('seria_doc').AsString;
+  student.FieldByName('nomer').AsString:=abitur.FieldByName('nomer_doc').AsString;
+  student.FieldByName('data').AsString:=abitur.FieldByName('data_vid').AsString;
+  student.FieldByName('kem_vidan').AsString:=abitur.FieldByName('kem_vid').AsString;
+  student.FieldByName('podrazd').AsString:=abitur.FieldByName('podrazd_pas').AsString;
+  student.FieldByName('indekc').AsString:=abitur.FieldByName('indeks').AsString;
+  student.FieldByName('strana').AsString:=abitur.FieldByName('strana').AsString;
+  student.FieldByName('oblast').AsString:=abitur.FieldByName('oblast').AsString;
+  student.FieldByName('gorod').AsString:=abitur.FieldByName('gorod').AsString;
+  student.FieldByName('ulica').AsString:=abitur.FieldByName('ulica').AsString;
+  student.FieldByName('dom').AsString:=abitur.FieldByName('dom').AsString;
+  student.FieldByName('kvartira').AsString:=abitur.FieldByName('kvartira').AsString;
+   abitur.ApplyUpdates;
+
+   form9.show;
+
+end;
+
+procedure TForm1.BitBtn6Click(Sender: TObject);
+begin
+  form13.show;
+end;
+
+procedure TForm1.BitBtn7Click(Sender: TObject);
+begin
+  form14.show
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var s,p:Widestring;
+begin
+abitur.Filtered:=False;
+s:=ComboBox1.text;
+abitur.Filter:= 'SPEZ_name='+ QuotedStr(s);
+
+abitur.Filtered:=True;
+ end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  abitur.Filtered:=False;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  abitur.Edit;
+  abitur.FieldByName('prinyat').AsInteger:=0;
+  abitur.Post;
+  form12.show;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var s,p:Widestring;
+begin
+abitur.Filtered:=False;
+s:=Edit2.text;
+abitur.Filter:= 'FAM='+ QuotedStr(s);
+
+abitur.Filtered:=True;
+end;
+
+procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  if DBGrid1.DataSource.DataSet.FieldByName('prinyat').Asinteger > 0 then
+  begin
+    DBGrid1.Canvas.Brush.Color:= clRed;
+    dbgrid1.Canvas.Font.Color:=clred;
+    DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+  end;
+end;
+
+procedure TForm1.Edit1Change(Sender: TObject);
+begin
+   abitur.Locate('fam',edit1.text,[loPartialKey,loCaseInsensitive]);
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+iniPropStorage.IniSection:='Path';
+zconnection1.Connected:=false;
+zconnection1.HostName:= IniPropStorage.ReadString('host','');
+zconnection1.Database:=IniPropStorage.ReadString('path','');
+zconnection1.user:= IniPropStorage.ReadString('user','');
+zconnection1.password:=IniPropStorage.ReadString('password','');
+zconnection1.Connected:=true;
+abitur.Active:=true;
+spez.Active:=true;
+zquery1.Active:=true;
+zquery2.Active:=true;
+zquery3.Active:=true;
+
+student.Active:=true;
+gruppa.Active:=true;
+prepod.Active:=true;
+
+ComboBox1.Clear;
+  spez.First;
+While not Spez.EOF do
+begin
+ ComboBox1.Items.Add(trim(spez.FieldByName('name').AsString));
+  spez.Next;
+end;
+Form1.Position:=poScreenCenter;
+end;
+
+procedure TForm1.MenuItem10Click(Sender: TObject);
+begin
+  form10.show;
+end;
+
+procedure TForm1.MenuItem11Click(Sender: TObject);
+begin
+  form7.show
+end;
+
+procedure TForm1.MenuItem2Click(Sender: TObject);
+begin
+  form3.showmodal;
+end;
+
+end.
+

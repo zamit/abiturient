@@ -1,0 +1,129 @@
+object Form6: TForm6
+  Left = 373
+  Height = 764
+  Top = 42
+  Width = 985
+  Caption = 'Данные по заявлениям'
+  ClientHeight = 764
+  ClientWidth = 985
+  DesignTimePPI = 120
+  LCLVersion = '2.2.2.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 290
+    Top = 30
+    Width = 932
+    Color = clWindow
+    Columns = <    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Код'
+        FieldName = 'KOD'
+      end    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Специальность'
+        Width = 438
+        FieldName = 'NAME'
+      end    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'КОЛИЧЕСТВО'
+        FieldName = 'KOL'
+      end    
+      item
+        Title.Caption = 'Средний балл'
+        FieldName = 'SR_BALL'
+      end>
+    DataSource = Form1.spisok
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object DBGrid2: TDBGrid
+    Left = 10
+    Height = 220
+    Top = 560
+    Width = 980
+    Color = clWindow
+    Columns = <    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Код'
+        FieldName = 'KOD'
+      end    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Специальность'
+        Width = 688
+        FieldName = 'NAME'
+      end    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'КОЛИЧЕСТВО'
+        FieldName = 'KOL'
+      end>
+    DataSource = Form1.spisok1
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 50
+    Height = 20
+    Top = 1
+    Width = 122
+    Caption = 'Очное отделение'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 20
+    Height = 20
+    Top = 530
+    Width = 136
+    Caption = 'Заочное отделение'
+    ParentColor = False
+  end
+  object DBGrid3: TDBGrid
+    Left = 10
+    Height = 180
+    Top = 350
+    Width = 980
+    Color = clWindow
+    Columns = <    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Код'
+        FieldName = 'KOD'
+      end    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'Специальность'
+        Width = 562
+        FieldName = 'NAME'
+      end    
+      item
+        MinSize = 12
+        MaxSize = 250
+        Title.Caption = 'КОЛИЧЕСТВО'
+        FieldName = 'KOL'
+      end>
+    DataSource = Form1.spisok2
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 30
+    Height = 20
+    Top = 320
+    Width = 133
+    Caption = 'На базе 11 классов'
+    ParentColor = False
+  end
+end

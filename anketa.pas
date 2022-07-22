@@ -1,0 +1,238 @@
+unit anketa;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DbCtrls,
+  StdCtrls, ComCtrls, Buttons, ExtCtrls, DBGrids;
+
+type
+
+  { TForm4 }
+
+  TForm4 = class(TForm)
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    DBCheckBox1: TDBCheckBox;
+    DBComboBox1: TDBComboBox;
+    DBComboBox2: TDBComboBox;
+    DBComboBox3: TDBComboBox;
+    DBEdit1: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBEdit11: TDBEdit;
+    DBEdit12: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    DBEdit16: TDBEdit;
+    DBEdit17: TDBEdit;
+    DBEdit18: TDBEdit;
+    DBEdit19: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit20: TDBEdit;
+    DBEdit21: TDBEdit;
+    DBEdit22: TDBEdit;
+    DBEdit23: TDBEdit;
+    DBEdit24: TDBEdit;
+    DBEdit25: TDBEdit;
+    DBEdit26: TDBEdit;
+    DBEdit27: TDBEdit;
+    DBEdit28: TDBEdit;
+    DBEdit29: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit30: TDBEdit;
+    DBEdit31: TDBEdit;
+    DBEdit32: TDBEdit;
+    DBEdit33: TDBEdit;
+    DBEdit34: TDBEdit;
+    DBEdit35: TDBEdit;
+    DBEdit36: TDBEdit;
+    DBEdit37: TDBEdit;
+    DBEdit38: TDBEdit;
+    DBEdit39: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit40: TDBEdit;
+    DBEdit41: TDBEdit;
+    DBEdit42: TDBEdit;
+    DBEdit43: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBGrid2: TDBGrid;
+    DBImage1: TDBImage;
+    DBLookupComboBox1: TDBLookupComboBox;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    GroupBox4: TGroupBox;
+    Label1: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label2: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
+    Label3: TLabel;
+    Label30: TLabel;
+    Label31: TLabel;
+    Label32: TLabel;
+    Label33: TLabel;
+    Label34: TLabel;
+    Label35: TLabel;
+    Label36: TLabel;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
+    Label4: TLabel;
+    Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    Label43: TLabel;
+    Label44: TLabel;
+    Label45: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    PageControl1: TPageControl;
+    Shape1: TShape;
+    Shape2: TShape;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    TabSheet5: TTabSheet;
+    TabSheet6: TTabSheet;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure DBEdit19Change(Sender: TObject);
+    procedure DBEdit22Change(Sender: TObject);
+    procedure DBLookupComboBox1Change(Sender: TObject);
+    procedure DBLookupComboBox1Exit(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormKeyPress(Sender: TObject; var Key: char);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure Label11Click(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+     uses main;
+{$R *.lfm}
+
+{ TForm4 }
+
+procedure TForm4.Label11Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.BitBtn1Click(Sender: TObject);
+begin
+  form1.abitur.Post;
+  form1.abitur.ApplyUpdates;
+  form4.close;
+end;
+
+procedure TForm4.BitBtn2Click(Sender: TObject);
+begin
+     form1.abitur.Cancel;
+  form1.abitur.CancelUpdates;
+  form4.close;
+end;
+
+procedure TForm4.Button1Click(Sender: TObject);
+begin
+
+
+end;
+
+procedure TForm4.Button2Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.Button4Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.Button5Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.DBEdit19Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.DBEdit22Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.DBLookupComboBox1Change(Sender: TObject);
+begin
+    form1.abitur.FieldByName('spez_name').AsString:=DBLookupComboBox1.Text;
+end;
+
+procedure TForm4.DBLookupComboBox1Exit(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm4.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+  );
+begin
+
+end;
+
+procedure TForm4.FormKeyPress(Sender: TObject; var Key: char);
+begin
+  if (key = #13)
+     then ActiveControl := FindNextControl(ActiveControl, true, true, false);
+end;
+
+procedure TForm4.FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+
+end;
+
+end.
+

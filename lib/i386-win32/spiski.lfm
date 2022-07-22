@@ -1,0 +1,106 @@
+object Form6: TForm6
+  Left = 373
+  Height = 611
+  Top = 42
+  Width = 788
+  Caption = 'Данные по заявлениям'
+  ClientHeight = 611
+  ClientWidth = 788
+  LCLVersion = '1.4.0.4'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 232
+    Top = 24
+    Width = 746
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Код'
+        FieldName = 'KOD'
+      end    
+      item
+        Title.Caption = 'Специальность'
+        Width = 350
+        FieldName = 'NAME'
+      end    
+      item
+        Title.Caption = 'КОЛИЧЕСТВО'
+        FieldName = 'KOL'
+      end>
+    DataSource = Form1.spisok
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object DBGrid2: TDBGrid
+    Left = 8
+    Height = 176
+    Top = 448
+    Width = 784
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Код'
+        FieldName = 'KOD'
+      end    
+      item
+        Title.Caption = 'Специальность'
+        Width = 550
+        FieldName = 'NAME'
+      end    
+      item
+        Title.Caption = 'КОЛИЧЕСТВО'
+        FieldName = 'KOL'
+      end>
+    DataSource = Form1.spisok1
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 40
+    Height = 15
+    Top = 1
+    Width = 96
+    Caption = 'Очное отделение'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 424
+    Width = 107
+    Caption = 'Заочное отделение'
+    ParentColor = False
+  end
+  object DBGrid3: TDBGrid
+    Left = 8
+    Height = 144
+    Top = 280
+    Width = 784
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Код'
+        FieldName = 'KOD'
+      end    
+      item
+        Title.Caption = 'Специальность'
+        Width = 450
+        FieldName = 'NAME'
+      end    
+      item
+        Title.Caption = 'КОЛИЧЕСТВО'
+        FieldName = 'KOL'
+      end>
+    DataSource = Form1.spisok2
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 15
+    Top = 256
+    Width = 104
+    Caption = 'На базе 11 классов'
+    ParentColor = False
+  end
+end
